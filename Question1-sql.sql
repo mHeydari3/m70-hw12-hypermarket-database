@@ -80,7 +80,14 @@ GROUP BY offices_tbl.id;
 SELECT offices_tbl.name FROM offices_tbl 
 JOIN branches_tbl ON branches_tbl.city LIKE '%Isfahan%';
 
+SELECT branches_tbl.name COUNT(branches_tbl.name) FROM branches 
+JOIN offices_tbl ON offices_tbl.branchid = branches_tbl.id
 
+SELECT employees_tbl.name , offices_tbl.name FROM employees_tbl
+JOIN offices_tbl ON employees.officeid = offices_tbl.officeid
 
+SELECT AVG(employees_tbl.salary) FROM employees_tbl
+JOIN offices_tbl ON offices_tbl.branchid = branches_tbl.id
+WHERE employees_tbl.officeid = offices_tbl.officeid AND branches_tbl.city LIKE '%Isfahan%'
 
 
